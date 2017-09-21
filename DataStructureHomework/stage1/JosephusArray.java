@@ -27,20 +27,14 @@ public class JosephusArray {
             int count = n;
             int i = 0;
             int j = 1;  // j as the number to be checked
-            int sign = 1;
             while(count > 0){
                 if(arr[i % n] > 0){
                     if(j % m == 0){
-                        System.out.print("The "+ sign +" person: "+arr[i % n]+ " ");
-                       if(sign == arr.length) {
-                           System.out.println();
-                           System.out.print("The last survivor: " + arr[i % n] + " ");
-                       }
+                        System.out.print(arr[i % n]+ " ");
+                        arr[i % n] =0;
                         j = 1;
                         i++;
                         count--;
-                        sign++;
-                        arr[i % n] =0;
                     }
                     else{
                         i++;
