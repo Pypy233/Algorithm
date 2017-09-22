@@ -18,7 +18,7 @@ public class Polynomial {
         Node head1 = null;
         Node head2 = null;
         Polynomial pol = new Polynomial();
-        head1 = pol.initalPol(head1, 2);
+        head1 = pol.initalPol(head1, 3);
         head2 = pol.initalPol(head2, 3);
         Node aimHead = pol.add(head1, head2);
         System.out.print("The first polynomial: " );
@@ -29,15 +29,23 @@ public class Polynomial {
         pol.printList(aimHead);
     }
     public Node insertItem(Node head, int coeff1, int exp1) {
+        //Node node = new Node(coeff1, exp1);
+        //node.next = head;
+        //head = node;
+        //return head;
         Node node = new Node(coeff1, exp1);
-        node.next = head;
-        head = node;
+        for(Node n = head; n != null && n.exp < exp1; n = n.next){
+            if(n.next.exp > exp1){
+                node.next = n.next;
+                n.next = node;
+            }
+        }
         return head;
     }
     public Node initalPol(Node head, int maxDegree){
         System.out.println("Enter the coefficients and exponents: ");
         Scanner input = new Scanner(System.in);
-        int coeff1 = 0, exp1 = 0;
+        int coeff1, exp1;
         for(int i = 0; i < maxDegree; i++){
             coeff1 = input.nextInt();
             exp1 = input.nextInt();
