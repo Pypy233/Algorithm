@@ -29,9 +29,9 @@ public class JosephusArray {
             int j = 1;  // j as the number to be checked
             while(count > 0){
                 if(arr[i % n] > 0){
-                    if(j % m == 0){
+                    if(j == m){
                         System.out.print(arr[i % n]+ " ");
-                        arr[i % n] =0;
+                        arr[i % n] =0; // sign '0'
                         j = 1;
                         i++;
                         count--;
