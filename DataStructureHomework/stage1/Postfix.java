@@ -7,8 +7,11 @@ import java.util.Stack;
 public class Postfix {
     public static void main(String[] args) {
         String s = "3+(2-5)*6/3";
+        System.out.println("The infix expression:           " + s);
         Postfix postfix = new Postfix();
-        System.out.println("The postfix expression: " + postfix.trans(s));
+        System.out.println("The postfix expression:         " + postfix.trans(s));
+        System.out.println("The postfix expression result : " + postfix.getRes(postfix.trans(s)));
+
     }
    public String trans(String str) {
        String res = "";
@@ -52,6 +55,7 @@ public class Postfix {
                        else
                            res += temp;
                    }
+                   break;
                default: res += ch;
                         break;
            }
@@ -60,5 +64,29 @@ public class Postfix {
            res += stack.pop();
            return res;
 
+   }
+   public double getRes(String postfix){
+        Stack<Double> stack = new Stack<>();
+        for(int i = 0; i < postfix.length(); i++){
+            if(Character.isDigit(postfix.charAt(i)))
+                stack.push((double)(postfix.charAt(i)));
+            else{
+                double num1 = stack.pop();
+                double num2 = stack.pop();
+                return calculate(num2, num1, postfix.charAt(i) + "");
+            }
+        }
+
+        return  0.0;
+   }
+   public static double calculate(double x, double y, String s){
+        switch (s){
+            case "+":   return x + y;
+            case "-":   return x - y;
+            case "*":   return x * y;
+            case "/":   return x / y;
+
+        }
+        return 0;
    }
 }
