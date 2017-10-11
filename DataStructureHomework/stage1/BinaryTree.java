@@ -52,13 +52,11 @@ public class BinaryTree {
            print(node.rht);
 
    }
-    public void print(){
-       print(root);
-    }
+
    public static void main(String[] args){
        String s = "45+23*56/2-5";
        BinaryTree bTree = new BinaryTree();
        bTree.create(s);
-       bTree.print();
+       bTree.print(bTree.root);
    }
 }
