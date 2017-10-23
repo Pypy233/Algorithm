@@ -1,9 +1,11 @@
-package stage1;
+package stage2;
 
 /**
  * Created by py on 2017/10/11.
  */
-
+// Assume that the binary tree is composition of string "abcdefg"
+    // What's more, the 'a' the root , then b, c , d, e , f and g.
+    //Print infix, postfix and prefix of the tree/=.
 public class BinaryTree {
     class BinaryNode {
         BinaryNode root;
@@ -59,10 +61,13 @@ public class BinaryTree {
         public static void main(String[] args){
             BinaryTree tree = new BinaryTree();
             BinaryNode root = tree.createTree();
+            System.out.print("Infix:   ");
             tree.printInfix(root);
             System.out.println();
+            System.out.print("Postfix: ");
             tree.printPostfix(root);
             System.out.println();
+            System.out.print("Prefix:  ");
             tree.printPrefix(root);
         }
 
