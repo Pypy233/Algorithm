@@ -1,12 +1,12 @@
-""" Some uncommon points and mistakes are written here."""
+""" Some uncommon points and mistakes are written here for review."""
 from math import sqrt
 
 
-str = 'demo'
+s = 'demo'
 # str[0] = 'x'
 '''str' object does not support item assignment'''
 '''For it is a tuple, it cannot be changed!'''
-print(str)
+print(s)
 
 
 '''It can be written as this, though we are accustomed to "3 + 5" '''
@@ -72,3 +72,35 @@ def square_root(n, accuracy):
 print(square_root(9, 20))
 # 3.0
 
+
+'''Override the str , addition, eql... method, what I get most is not the override,
+        but the name "str", be cautious!'''
+
+
+class Fraction:
+    def __init__(self, top, bottom):
+        self.num = top
+        self.den = bottom
+
+    def show(self):
+        print(self.num, '/', self.den)
+
+    def __str__(self):
+        return str(self.num) + '/' + str(self.den)
+
+    def __add__(self, other):
+        new_top = self.num * other.den + self.den * other.num
+        new_den = self.den * other.den
+        return Fraction(new_top, new_den)
+
+    def __eq__(self, other):
+        return self.num * other.den == self.den * other.num
+
+
+f1 = Fraction(1, 2)
+f2 = Fraction(1, 3)
+f3 = Fraction(2, 4)
+print(f1)
+print(f1 + f2)
+print(f1 == f2)
+print(f1 == f3)
