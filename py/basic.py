@@ -36,6 +36,8 @@ print('The name is %s, age is %d' % (name, age))
 
 
 '''try-catch module'''
+
+
 a_number = -7
 try:
     print(math.sqrt(a_number))
@@ -49,8 +51,24 @@ except:
 
 
 '''Or throw an error directly'''
-if a_number < 0: raise RuntimeError('You can\'t use a negative number')
-else:
-    print(sqrt(a_number))
+
+
+# if a_number < 0: raise RuntimeError('You can\'t use a negative number')
+# else:
+#   print(sqrt(a_number))
 # RuntimeError: You can't use a negative number
+
+
+'''Newton’s Method: 𝑛𝑒𝑤_𝑔𝑢𝑒𝑠𝑠 = 1/2 * (𝑜𝑙𝑑_𝑔𝑢𝑒𝑠𝑠 + 𝑛) / 𝑜𝑙𝑑_𝑔𝑢𝑒𝑠𝑠'''
+
+
+def square_root(n, accuracy):
+    root = n / 2
+    for k in range(accuracy):
+        root = (1 / 2) * (root + (n / root))
+    return root
+
+
+print(square_root(9, 20))
+# 3.0
 
