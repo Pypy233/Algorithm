@@ -1,16 +1,16 @@
 #!/Users/py/GitHub/Algorithm/py/basic\ structure
 # -*- coding: UTF-8 -*-
-import Stack
+from basic_structure import Stack
 
 
 def par_checker(symobl_string):
-	s = Stack()
+	s = Stack.Stack()
 	balanced = True
 	idx = 0
 	while idx < len(symobl_string) and balanced:
 		symbol = symobl_string[idx]
 		if symbol == '(':
-			s.push(symobl)
+			s.push(symbol)
 		else:
 			if(s.is_empty()):
 				balanced = False
@@ -29,7 +29,7 @@ print(par_checker('(((())))'))
 print(par_checker('((()'))
 
 def par_checker2(symbol_string):
-	s = Stack()
+	s = Stack.Stack()
 	balanced = True
 	idx = 0
 	while idx < len(symbol_string) and balanced:
@@ -44,7 +44,7 @@ def par_checker2(symbol_string):
 				if not matches(top, symbol):
 					return False
 		idx += 1
-		
+
 	if balanced and s.is_empty():
 		return True
 	else:
@@ -53,5 +53,9 @@ def par_checker2(symbol_string):
 
 def matches(open, close):
 	opens = '([{'
-	closes = '}])'
-	return opnens.index(open) == closes.index(close)
+	closes = ')]}'
+	return opens.index(open) == closes.index(close)
+
+print()
+print(par_checker2('{{([][])}()}'))
+print(par_checker2('[{()]'))
