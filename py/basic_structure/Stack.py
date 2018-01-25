@@ -19,7 +19,7 @@ class Stack:
 		return len(self.items)
 
 
-s = Stack()
+'''s = Stack()
 print(s.is_empty())
 s.push(1)
 s.push('dog')
@@ -30,5 +30,5 @@ print(s.is_empty())
 s.push(8.9)
 print(s.pop())
 print(s.pop())
-print(s.size())
+print(s.size())'''
 
