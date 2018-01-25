@@ -1,11 +1,11 @@
-from basic_structure import Stack  # As previous defined
+from basic_structure import stack  # As previous defined
 
 def infix_to_postfix(infix_expr):
 	prec = {}
 	prec['*'] = prec['/'] = 3
 	prec['+'] = prec['-'] = 2
 	prec['('] = 1
-	op_stack = Stack.Stack()
+	op_stack = stack.Stack()
 	postfix_list = []
 	token_list = infix_expr.split()
 

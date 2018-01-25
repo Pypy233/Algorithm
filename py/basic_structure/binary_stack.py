@@ -1,9 +1,9 @@
 # Transform decimal number to binary number by using stack defined before.
 # The complexity is O(logn)
 
-from basic_structure import Stack
+from basic_structure import stack
 def divide_by_2(dec_number):
-    rem_stack = Stack.Stack()
+    rem_stack = stack.Stack()
 
     while dec_number > 0:
         rem_number = dec_number % 2

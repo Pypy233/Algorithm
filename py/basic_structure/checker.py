@@ -1,10 +1,10 @@
 #!/Users/py/GitHub/Algorithm/py/basic\ structure
 # -*- coding: UTF-8 -*-
-from basic_structure import Stack
+from basic_structure import stack
 
 
 def par_checker(symobl_string):
-	s = Stack.Stack()
+	s = stack.Stack()
 	balanced = True
 	idx = 0
 	while idx < len(symobl_string) and balanced:
@@ -29,7 +29,7 @@ print(par_checker('(((())))'))
 print(par_checker('((()'))
 
 def par_checker2(symbol_string):
-	s = Stack.Stack()
+	s = stack.Stack()
 	balanced = True
 	idx = 0
 	while idx < len(symbol_string) and balanced:

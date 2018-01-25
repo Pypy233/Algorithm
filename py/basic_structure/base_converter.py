@@ -1,10 +1,10 @@
-from basic_structure import Stack
+from basic_structure import stack
 
 
 def base_converter(dec_number, base):
     digits = '123456789ABCDEF'
 
-    rem_stack = Stack.Stack()
+    rem_stack = stack.Stack()
     while dec_number > 0:
         rem = dec_number % base
         rem_stack.push(rem)
