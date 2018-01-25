@@ -81,5 +81,5 @@ def anagram_solution4(s1, s2):
 
 print(anagram_solution4('apple','pleap'))
 
-# dding it all up gives us 𝑇 (𝑛) = 2𝑛 + 26 steps. That is 𝑂(𝑛).
+# Adding it all up gives us 𝑇 (𝑛) = 2𝑛 + 26 steps. That is 𝑂(𝑛).
 # Found a linear order of magnitude algorithm for solving this problem.
