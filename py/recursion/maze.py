@@ -114,7 +114,7 @@ def searchFrom(maze, startRow, startColumn):
         maze.updatePosition(startRow, startColumn, PART_OF_PATH)
         return True
     maze.updatePosition(startRow, startColumn, TRIED)
-    
+
     found = searchFrom(maze, startRow-1, startColumn) or \
             searchFrom(maze, startRow+1, startColumn) or \
             searchFrom(maze, startRow, startColumn-1) or \
